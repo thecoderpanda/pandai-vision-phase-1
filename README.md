@@ -1,34 +1,93 @@
-# Face Recogntion Based Attendance System
-An attendance system which could automatically mark attendance from iamges of students. This project uses Python, OpenCV and SQLite3 as database. An image of a class could be given as input and system detects indivuals in the image. Database is updated to mark attendance to students preset. Attendance Reports could be generated for more insights.
+# Employee Face Recognition System
+
+The face recogntion system is used to train the faces of employees and detect them when they walk past the camera.
+It can be used as an attendence system for the employees.
+
+The system is built using python libraries dlib and face_recognition. Django framework is used to develop the front end for the system.
+
+## Installation
+
+Installing OpenCV, Dlib and face_recogntion libraries
+
+```bash
+pip install opencv-python
+pip install dlib
+pip install face_recognition
+```
+
+Installing other packages
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Firstly, to run the django server, open the terminal and go the following directory
+
+```bash
+cd face_rec_django
+```
+
+and run the following command
+
+```bash
+python manage.py runserver
+```
+
+Then go to the browser and enter the url **http://127.0.0.1:8000/**
+
+&nbsp;
 
 
-There are 2 parts in this attendance system.
-  1. Face Detection and Recogniton (explained in detail [here](https://github.com/amaljoseph/python-opencv-multiple-face-recognition).)
-  2. Database operations and attendance report generations.
-  
-## Requirements
-1. [Python 2.7.x](https://www.python.org/downloads/)
 
-2. [OpenCV 2](https://opencv.org/releases/) `sudo apt-get install libopencv-dev python-opencv`
+## Steps to navigate website
 
-3. [Numpy](https://www.numpy.org/) `sudo apt-get install python-numpy`
 
-4. [SQLite3](https://www.sqlite.org/download.html) `pip install pysqlite`
 
-## How to run?
-To run the program, in terminal type `python ui.py`
 
-The photos of each individual should be stored in a folder s[i] (example - s1, s2 etc) inside the training-data folder.
-Test images are stored in test-data folder.
+**1) Identify faces**
 
-Initailly train the system using option 1 (Mark the attendance). It takes in all the student images and train the system. On later stages attendance could be marked using option 1 again.
+This option will bring up the webcam and capture faces. So leave this open in the background to continuously detect faces.
+To close the webcam, click the webcam window and press Q on the keyboard
 
-Option 2 could be selected to view the attendance list.
+&nbsp;
 
-Option 3 could be seleted to generate an attendance report. 
 
-Use option 4 to close the terminal.
+**2) Detected faces**
 
-The face detection and recognition part is explained in detail [here](https://github.com/amaljoseph/python-opencv-face-recognition)
+All the employess that are detected will be displayed here. The records can be viewed by date.
 
-This project is done by [amaljoseph](https://github.com/amaljoseph/), [irksomeorangutan](https://github.com/irksomeorangutan), Kishan Chand and Amal Satheesh.
+
+
+&nbsp;
+
+**3)Add photos**
+
+This is used to train faces of employees. Enter the id of the employee and the webcam will popup. If the employee details are not found then go to step 4 to add new employee.
+
+For best results follow these steps
+
+- Take 15-20 images (press space bar to click images and you can open the terminal to see number of images clicked)
+- For each image slightly change the angle of your face and the distance to the camera. 
+
+To close the webcam, click on the webcam window and press ESC key.
+
+**NOTE:** if the webcam window doesn't popup, restart the django server by opening the terminal and pressing CTRL+C and run the command 
+
+```bash
+python manage.py runserver
+```
+
+&nbsp;
+
+**4)Add employee**
+
+New employee details can be added here
+
+
+&nbsp;
+
+**5)Train model**
+
+If new employee images are captured, then the model needs to be trained again. Once you click this option, open the terminal to check the progress of the training.
