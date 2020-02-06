@@ -50,7 +50,7 @@ def predict(rgb_frame, knn_clf=None, model_path=None, distance_threshold=0.5):
 
 # if __name__ == "__main__":
 def stream():
-    video_capture = cv2.VideoCapture(1)
+    video_capture = cv2.VideoCapture(0)
 
     process_this_frame = True
 

@@ -34,6 +34,19 @@
     #myTable tr.header, #myTable tr:hover {
       background-color: #f1f1f1;
     }
+    .back {
+      background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
+    .separator {
+      padding-bottom:30px;
+    }
 </style>
 
 {% endblock %}
@@ -42,6 +55,7 @@
 
 
 <div class="container" style="background-color: white; padding: 50px;">
+<div class="separator"><a href="http://127.0.0.1:8000"><div class = "back"> Back to Dashboard</div></a> </div>
 
 <form type="get" action="." style="margin: 0">
     Enter Date: <input id="search_submit" type="date" name="search_box">
