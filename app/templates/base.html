@@ -26,13 +26,14 @@
 <body>
 	<br>
 	{% block content %}{% endblock %}
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://project.s3.amazonaws.com/static/js/chat.js"></script>
+ 
 	<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
     <script src="{% static 'vendor/slimscroll/jquery.slimscroll.js' %}"></script>
+	
     <script src="{% static 'libs/js/main-js.js' %}"></script>
-    <script src="{% static 'vendor/charts/morris-bundle/raphael.min.js' %}"></script>
-    <script src="{% static 'vendor/charts/morris-bundle/morris.js' %}"></script>
-    <script src="{% static 'vendor/charts/morris-bundle/morrisjs.html' %}"></script>
+    
     <script src="{% static 'vendor/charts/charts-bundle/Chart.bundle.js' %}"></script>
     <script src="{% static 'vendor/charts/charts-bundle/chartjs.js' %}"></script>
     <script src="{% static 'libs/js/dashboard-influencer.js' %}"></script>
