@@ -174,7 +174,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 	                        <li class="nav-divider">
 	                        </li>
 	                        <li class="nav-item ">
-	                            <a class="nav-link active" href="{% url 'index' %}" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+	                            <a class="nav-link" href="{% url 'index' %}" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
 	                           
 	                        </li>
 	                        <li class="nav-item">
@@ -185,7 +185,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
 	                            <a class="nav-link" href="{% url 'add_photos' %}"><i class="fas fa-fw fa-chart-pie"></i>Add Photos</a>
 	                        </li>
 	                        <li class="nav-item ">
-	                            <a class="nav-link" href="{% url 'detected' %}"><i class="fab fa-fw fa-wpforms"></i>Check Employee Log</a>
+	                            <a class="nav-link active" href="{% url 'detected' %}"><i class="fab fa-fw fa-wpforms"></i>Check Employee Log</a>
+	            
+	                        </li>
+                          <li class="nav-item ">
+	                            <a class="nav-link" href="{% url 'temperature' %}"><i class="fab fa-fw fa-wpforms"></i>Check Employee temperature</a>
+	            
+	                        </li>
+							<li class="nav-item ">
+	                            <a class="nav-link" href="{% url 'signin_signout' %}"><i class="fab fa-fw fa-wpforms"></i>Check Employee Signin - Signout time</a>
 	            
 	                        </li>
 	                        <li class="nav-item">
@@ -229,14 +237,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
   <table id="myTable">
     <tr class="header">
-      	<th width="200">ID</th>
-      	<th width="300">timestamp</th>
+      	<th width="200">Name and ID</th>
+      	<th width="300">Last Detection time</th>
+        <th width="50"> Temperature </th>
         <th width="100">Image</th>
   	</tr>
   	{% for det in det_list %}
         <tr>
-    			<td>{{det.emp_id}}</td>
+    			<td>{{det.emp_id}}: {{det.emp_name}}</td>
     			<td>{{det.time_stamp}}</td>
+          <td> <div class="container formgroup" style="padding: 20px;">Temperature: {{ form.temp }} </div> </td>
+
                     <td>
               <!-- <img src="{{ det.photo.url }}" height="100" style="margin-bottom: 5px;"> -->
               <img id="myImg" src="{{ det.photo.url }}" height="100" style="margin-bottom: 5px;">
@@ -247,6 +258,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div id="caption"></div>
                 </div>
                           </td>
+          
                             </tr>
   	{% endfor %}
   </table>

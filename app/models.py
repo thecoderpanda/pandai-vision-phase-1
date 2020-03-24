@@ -12,6 +12,8 @@ import os
 class Employee(models.Model):
 	id = models.CharField(primary_key=True, max_length=10)
 	name = models.CharField(max_length=50)
+	temperature=models.CharField(max_length=3)
+	department=models.CharField(max_length=50)
 	# contact_number = models.CharField(max_length=50)
 	# date_of_birth = models.CharField(max_length=50)
 	# date_of_joining = models.CharField(max_length=50)
@@ -38,6 +40,10 @@ class Detected(models.Model):
 	photo = models.ImageField(upload_to='detected/', default='app/facerec/detected/noimg.png')
 
 	def __str__(self):
-		emp = Employee.objects.get(name=self.emp_id)
-		return f"{emp.name} {self.time_stamp}"
+		emp = Employee.objects.get(name=self.emp_name)
+		emp = Employee.objects.get(id=self.emp_id)
+		return f"{emp.name} {self.time_stamp} {emp.id}"
 
+class temperature(models.Model):
+   	temperature=models.CharField(max_length=3)
+    

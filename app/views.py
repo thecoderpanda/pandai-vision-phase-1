@@ -194,5 +194,9 @@ def add_emp(request):
         form = EmployeeForm()
     return render(request, 'app/add_emp.html', {'form': form})
 
+def temperature():
+       	temperature=models.CharField(max_length=3)
 
 
+def signin_signout():
+    pass

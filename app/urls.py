@@ -11,4 +11,7 @@ urlpatterns = [
     path('detected/', views.detected, name='detected'),
     path('identify/', views.identify, name='identify'),
     path('add_emp/', views.add_emp, name='add_emp'),
+    path('temp/', views.temperature, name="temperature"),
+    path('signin_signout/', views.signin_signout, name="signin_signout"),
+    #path('delete', views.deleteemp, name='deleteemp'),
 ]
