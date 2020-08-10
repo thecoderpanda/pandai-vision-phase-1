@@ -6,4 +6,4 @@ class EmployeeForm(forms.ModelForm):
 
     class Meta:
         model = Employee
-        fields = ('id', 'name','temperature', 'department',)
+        fields = ('id', 'name',)
